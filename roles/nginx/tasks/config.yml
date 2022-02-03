@@ -1,0 +1,11 @@
+---
+
+- name: Config Nginx
+  block:
+    - name: Put nginx config
+      template:
+        src: templates/nginx.conf.new.j2
+        dest: /etc/nginx/nginx.conf
+        owner: nginx
+      notify:
+        - reload nginx

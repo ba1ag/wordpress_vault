@@ -1,0 +1,6 @@
+---
+
+- name: Config firewalld
+  block:
+    - name: Run command to change SELinux context for data folder
+      command: "chcon -Rv --type=httpd_sys_content_t /srv/wordpress"
