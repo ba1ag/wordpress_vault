@@ -1,0 +1,10 @@
+---
+
+- hosts: all
+  roles:
+    - os/migrate
+    - os/epel
+    - nginx
+    - php
+    - mysql
+    - app/wordpress
