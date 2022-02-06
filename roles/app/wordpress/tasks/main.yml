@@ -2,12 +2,15 @@
 
 - name: 'DOWNLOAD | download wordpress'
   import_tasks: "download.yml"
+  tags: wordpress
 
 - name: 'CONFIG| config nginx'
   import_tasks: "config.yml"
+  tags: nginx
 
 - name: 'SELinux | SELinux config'
   import_tasks: "selinux.yml"
+  tags: nginx
 
 
 

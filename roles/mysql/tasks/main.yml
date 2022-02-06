@@ -2,10 +2,13 @@
 
 - name: 'PREREQ | prereq MySQL'
   import_tasks: "prereq.yml"
+  tags: mysql
 
 - name: 'INSTALL | install mysql-server'
   import_tasks: "install.yml"
+  tags: mysql
 
 - name: 'CONFIG| config mysql'
   import_tasks: "config.yml"
+  tags: mysql
 

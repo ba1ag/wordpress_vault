@@ -6,7 +6,6 @@
       template:
         src: templates/php.ini.j2
         dest: /etc/php.ini
-#      become: yes
 
     - name: Put correct www.conf
       template:
@@ -14,4 +13,3 @@
         dest: /etc/php-fpm.d/www.conf
       notify:
         - reload php-fpm
-#      become: yes
