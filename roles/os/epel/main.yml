@@ -1,3 +1,7 @@
 ---
-- name: 'CONFIG_OS | migrate on CentOs Stream'
-  import_tasks: "prereq.yml"
+
+- name: Install EPEL repo
+      yum:
+        name: epel-release
+        state: present
+  tags: os
