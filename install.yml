@@ -4,6 +4,7 @@
   vars_files:
     - vars/secret.yml
   roles:
+    - os/host_rename
     - os/migrate
     - os/epel
     - nginx

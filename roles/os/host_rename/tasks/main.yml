@@ -1,0 +1,20 @@
+---
+
+- name: Change HostName
+  block:
+    - name: Print the ip address
+      debug:
+        msg: Server {{ ansible_hostname }} has address {{ ansible_default_ipv4.address }}
+      when: ansible_default_ipv4.address is defined
+      tags: ip
+
+    - name: create new name
+      hostname:
+        name: "{{ ansible_default_ipv4.address | replace('.','-') }}"
+        use: systemd
+      tags: ip
+
+    - name: Print the new hostname
+      debug:
+        msg: Server has name {{ ansible_hostname }}
+      tags: ip
